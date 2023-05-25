@@ -1,21 +1,19 @@
 import logging
 
-from django.shortcuts import get_object_or_404
-from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import status, viewsets, filters
-from rest_framework.decorators import action
-from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework.response import Response
-from rest_framework.views import APIView
-
 from api.permissions import IsAdmin
 from api.users_serializers import (SignupSerializer,
                                    TokenSerializer,
                                    UserSerializer)
 from api.utils import send_otp, get_tokens_for_user
+from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
 from loggers import logger, formatter
+from rest_framework import status, viewsets, filters
+from rest_framework.decorators import action
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from users.models import ADMIN, User
-
 
 LOG_NAME = 'users_views.log'
 

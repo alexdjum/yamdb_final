@@ -1,7 +1,6 @@
 from django.db.models import Avg
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, viewsets
-
 from api.filters import TitleFilter
 from api.permissions import IsAdminOrReadOnly
 from api.titles_mixins import CreateListDestroyViewSet
