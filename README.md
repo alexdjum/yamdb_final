@@ -4,7 +4,7 @@
 
 ![example workflow](https://github.com/AlexDjum/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
-[//]: # (![example workflow]&#40;https://github.com/github/docs/actions/workflows/main.yml/badge.svg&#41;)
+#### [Проект](http://84.252.130.21:5000/)
 
 ### Описание
 
