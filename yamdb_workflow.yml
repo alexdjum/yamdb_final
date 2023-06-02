@@ -59,7 +59,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            sudo docker pull alexdjum/api_yamdb:v1.0
+            docker pull alexdjum/api_yamdb:v1.0
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
