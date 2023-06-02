@@ -1,38 +1,44 @@
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-# possible user roles
-USER = 'user'
-MODERATOR = 'moderator'
-ADMIN = 'admin'
+from api.validators import username_validator, validate_user
 
 
 class User(AbstractUser):
-    USER_ROLES = [
-        (USER, 'User'),
-        (MODERATOR, 'Moderator'),
-        (ADMIN, 'Admin'),
-    ]
-    email = models.EmailField(
-        'email address',
-        unique=True,
-        blank=False,
-        null=False,
+    ADMIN = 'admin'
+    MODERATOR = 'moderator'
+    USER = 'user'
+
+    ROLES = (
+        (ADMIN, 'Администратор'),
+        (MODERATOR, 'Модератор'),
+        (USER, 'Пользователь'),
     )
-    bio = models.TextField(
-        'биография',
-        blank=True,
-    )
+    username = models.CharField(max_length=settings.USERNAME_NAME,
+                                validators=[username_validator,
+                                            validate_user],
+                                unique=True)
+
+    email = models.EmailField(max_length=settings.EMAIL, unique=True)
+
     role = models.CharField(
-        'роль на сайте',
-        max_length=32,
-        choices=USER_ROLES,
-        default=USER
+        'Роль',
+        max_length=settings.ROLE_TEXT,
+        choices=ROLES, default=USER
     )
-    confirmation_code = models.CharField(max_length=8)
+    bio = models.TextField('Об авторе', null=True, blank=True)
+
+    @property
+    def is_moderator(self):
+        return self.role == self.MODERATOR or self.is_staff
+
+    @property
+    def is_admin(self):
+        return self.role == self.ADMIN or self.is_superuser
 
     class Meta:
-        ordering = ["-id"]
+        ordering = ('id',)
         verbose_name = 'пользователь'
         verbose_name_plural = 'пользователи'
 
