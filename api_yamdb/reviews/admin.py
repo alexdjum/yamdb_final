@@ -4,7 +4,6 @@ from django.contrib import admin
 from reviews.models import Comment, Review
 
 
-
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
     """Класс настройки раздела отзывов."""
