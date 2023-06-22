@@ -51,9 +51,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
-      - name: Test with flake8
-        run: |
-          cd home/djum18/
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
@@ -62,6 +59,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
+            cd home/djum18/
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb:v1.0
             sudo docker-compose stop
             sudo docker-compose rm web
