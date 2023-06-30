@@ -4,7 +4,6 @@
 
 ![example workflow](https://github.com/AlexDjum/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
-#### [Ссылка](http://84.252.130.21:5000/)
 
 ### Описание
 
