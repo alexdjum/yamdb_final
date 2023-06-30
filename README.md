@@ -2,7 +2,7 @@
 
 ## _API интернет-сервиса YaMDB для хранения рецензий на произведения
 
-![example workflow](https://github.com/AlexDjum/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+[![example workflow](https://github.com/AlexDjum/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/AlexDjum/yamdb_final/actions/workflows/yamdb_workflow.yml)
 
 
 ### Описание
