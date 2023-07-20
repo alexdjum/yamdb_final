@@ -3,7 +3,7 @@
 ## _API интернет-сервиса YaMDB для хранения рецензий на произведения
 
 [![example workflow](https://github.com/AlexDjum/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/AlexDjum/yamdb_final/actions/workflows/yamdb_workflow.yml)
-
+http://158.160.32.115/
 
 ### Описание
 
@@ -22,8 +22,8 @@
 
 ### Технологии
 
-Python 3.8
-Django 2.2.19
+Python 3.7
+Django 3.2
 Docker
 
 ### Шаблон наполнения .env файла
